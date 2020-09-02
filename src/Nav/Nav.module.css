@@ -1,0 +1,75 @@
+/* Using @media= 
+--used in media queries to apply different styles for different media types/devices
+(Use media queries to create a responsive website)
+
+Can be used to check
+1. width/height of view port
+2. width/height of device
+3. orientation 
+4. resolution
+
+https://www.w3schools.com/cssref/css3_pr_mediaquery.asp
+*/
+
+/* If screen is 0 - max 600px then NavItem will have this margin */
+@media only screen and (max-width: 600px) {
+  .NavItem {
+    margin: 0 3rem !important;
+  }
+}
+
+.Nav {
+  /* position: fixed; */
+  width: 100%;
+  /* removes bullet point */
+  list-style: none;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  background: rgba(17, 167, 212, 0.3);
+}
+
+.Navsticky {
+  padding: 1.5rem !important;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.NavItem {
+  margin: 0 5rem;
+  overflow: hidden;
+}
+
+.NavLink {
+  text-decoration: none;
+  color: var(--font-color-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.NavLink:hover {
+  color: var(--color-secondary);
+}
+
+/* NavLink::before ,  ::hover:before --> adds underline transition */
+.NavLink::before {
+  transition: transform 0.3s ease-in-out 0.1s;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-primary);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.NavLink:hover::before {
+  transform: translateX(0%);
+}
