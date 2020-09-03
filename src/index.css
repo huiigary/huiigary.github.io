@@ -38,6 +38,7 @@ h3 {
   --bp-smallest-5s: 21.25em;
 }
 
+/* not seem to do anything */
 a:link {
   color: none;
 }
