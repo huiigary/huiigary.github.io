@@ -3,8 +3,6 @@ import Fade from "react-reveal/Fade"
 import { FaGithub, FaMailBulk, FaLinkedin } from "react-icons/fa"
 
 export function Contact() {
-  const BLUE = "#5affe7"
-
   return (
     <section id='contact'>
       <div className='container'>

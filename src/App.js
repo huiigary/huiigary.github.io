@@ -5,6 +5,7 @@ import { Navigation } from "./Nav/Navigation"
 import { Skills } from "./Skills"
 import { Work } from "./Work"
 import { Contact } from "./Contact"
+import { Projects } from "./Projects"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Introduction />
       <Skills />
       <Work />
+      <Projects />
       <Contact />
     </div>
   )
