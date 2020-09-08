@@ -38,13 +38,12 @@ h3 {
   --bp-smallest-5s: 21.25em;
 }
 
-/* not seem to do anything */
-a:link {
-  color: none;
+a {
+  color: var(--color-secondary);
 }
 
-a:visited {
-  color: none;
+.contact-button > a {
+  color: var(--color-grey-primary);
 }
 
 .container {

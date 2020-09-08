@@ -1,17 +1,17 @@
 import React from "react"
+import { AboutMe } from "./About"
 import "./App.css"
-import { Introduction } from "./Introduction"
+import { Contact } from "./Contact"
 import { Navigation } from "./Nav/Navigation"
+import { Projects } from "./Projects"
 import { Skills } from "./Skills"
 import { Work } from "./Work"
-import { Contact } from "./Contact"
-import { Projects } from "./Projects"
 
 function App() {
   return (
     <div>
       <Navigation />
-      <Introduction />
+      <AboutMe />
       <Skills />
       <Work />
       <Projects />
