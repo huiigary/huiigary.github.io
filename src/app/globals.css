@@ -2,7 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Google fonts - Selected some fonts to use then imported it here for use... Add: Body{} font-family is the font I selected */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  /* Some CSS reset. This is very good idea to do for all projects to ensure UI will look the same on all browsers */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
 :root {
+  --color-bg: #1f1f38;
+  --color-bg2: #2e2e53;
+  --color-primary: #4ddbff;
+  --transition: all 400 ease;
+  --darkColor: #293f50;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
+  /* color: black; */
+  /* background-color: var(--color-bg); */
+
+  background: #648880;
+  background: linear-gradient(to right, #f6f1d3, #648880 85%, var(--darkColor));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +57,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
