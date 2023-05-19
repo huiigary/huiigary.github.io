@@ -94,7 +94,7 @@ export function Skills() {
         What I do !
       </Typography>
 
-      <p>Some tools and frameworks I've used to develop software:</p>
+      <p>Some tools and frameworks Ive used to develop software:</p>
 
       {/* Cards showing skills in: App development, web Development, Document Design,  */}
       <Box

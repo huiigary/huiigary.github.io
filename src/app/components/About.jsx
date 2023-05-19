@@ -43,7 +43,11 @@ export const About = () => {
             className='profileImage'
             width='auto'
           /> */}
-          <img src='/profile_pic_400.png' className='style.profileImage'></img>
+          <img
+            src='/profile_pic_400.png'
+            alt='profile image'
+            className='style.profileImage'
+          ></img>
         </Grid>
 
         <Stack paddingLeft={5}>
