@@ -4,12 +4,21 @@ const Context = createContext()
 
 import { Grid } from '@mui/material'
 import Image from 'next/image'
-import { About } from './components/About'
+import {
+  useRoutes,
+  Routes,
+  Route,
+  createBrowserRouter, // Is used if we need to wrap entire app with a router
+  BrowserRouter, // Used for single page with routes
+} from 'react-router-dom'
+import { App } from './App'
+import ResponsiveAppBar from './navbar/Nav'
 
-export default function Home() {
+export default function Main() {
   return (
-    <div>
-      <About />
-    </div>
+    <BrowserRouter>
+      <ResponsiveAppBar />
+      <App />
+    </BrowserRouter>
   )
 }

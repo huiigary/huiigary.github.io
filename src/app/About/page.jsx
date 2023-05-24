@@ -1,20 +1,20 @@
+'use client'
 import { Grid, Stack, Typography, Box } from '@mui/material'
 import React from 'react'
-import { Skills } from './Skills'
+import { Skills } from '../components/skills'
 import Image from 'next/image'
-
-import style from '../styles/About.css'
+import styles from '../styles/About.module.css'
 
 const aboutMeSentences = [
   'I am a skilled software developer from Vancouver, Canada, with front end experience in Typescript/Javascript and expertise in frameworks like Angular, React, and React-Native.',
-  'In my career so far,  my work focused on cross platform mobile app development and some backend experience with NodeJS, PostgreSQL, and GoLang, and expanding my skillset to become a full stack developer.',
+  'In my career so far, my work focused on cross platform mobile app development and some backend experience with NodeJS, PostgreSQL, and GoLang, and expanding my skillset to become a full stack developer.',
   "I am a quick learner and have collaborated with stakeholders to collect requirements, create documentation, and plan designs for creating solutions. Let's work together to bring ideas to life!",
   'Currently, I am learning Python and Django to further my knowledge of frontend and backend frameworks as a fullstack developer.',
 ]
 
 const MARGIN = 5
 
-export const About = () => {
+export default function About() {
   return (
     <Grid
       container
@@ -46,7 +46,7 @@ export const About = () => {
           <img
             src='/profile_pic_400.png'
             alt='profile image'
-            className='style.profileImage'
+            className={styles.profileImage}
           ></img>
         </Grid>
 
@@ -55,7 +55,7 @@ export const About = () => {
             <Typography variant='h5'>Who am I ?</Typography>
             <div>
               {aboutMeSentences.map((paragraph, index) => (
-                <p className='style.paragraphs' key={index}>
+                <p className={styles.paragraphs} key={index}>
                   {paragraph}
                 </p>
               ))}

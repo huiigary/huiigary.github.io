@@ -1,3 +1,4 @@
+'use client'
 import {
   Avatar,
   Card,
@@ -28,8 +29,6 @@ import {
 import { DiJava } from 'react-icons/di'
 import { Box } from '@mui/system'
 // import '../styles/Colours.css'
-// import 'animate.css'
-// import 'animate.css/animate.min.css'
 import { darkColor, lightColor, midColor } from '../constants/Colors'
 import MobileFriendlyIcon from '@mui/icons-material/MobileFriendly'
 import CodeIcon from '@mui/icons-material/Code'
