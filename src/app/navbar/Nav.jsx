@@ -12,7 +12,7 @@ import Container from '@mui/material/Container'
 import MenuItem from '@mui/material/MenuItem'
 import AdbIcon from '@mui/icons-material/Adb'
 import { useState, useEffect } from 'react'
-import './Navbar.css'
+import '../styles/Navbar.css'
 import HomeIcon from '@mui/icons-material/HomeOutlined'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined' // about
 import AssignmentIcon from '@mui/icons-material/AssignmentOutlined' // work

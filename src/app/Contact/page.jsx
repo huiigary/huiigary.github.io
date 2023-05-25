@@ -11,7 +11,7 @@ import {
 import { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import { useForm } from 'react-hook-form'
-//   import '../styles/contact.css'
+import '../styles/contact.css'
 import EmailIcon from '@mui/icons-material/Email'
 import HomeIcon from '@mui/icons-material/Home'
 import { darkColor, lightColor, midColor } from '../constants/Colors'

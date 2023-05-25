@@ -1,8 +1,7 @@
 'use client'
 import { Grid, Stack, Typography, Box } from '@mui/material'
 import React from 'react'
-import Image from 'next/image'
-import styles from '../styles/About.module.css'
+import '../styles/About.css'
 import Skills from '../components/Skills'
 
 const aboutMeSentences = [
@@ -46,7 +45,7 @@ export default function About() {
           <img
             src='/profile_pic_400.png'
             alt='profile image'
-            className={styles.profileImage}
+            className={'profileImage'}
           ></img>
         </Grid>
 
@@ -55,7 +54,7 @@ export default function About() {
             <Typography variant='h5'>Who am I ?</Typography>
             <div>
               {aboutMeSentences.map((paragraph, index) => (
-                <p className={styles.paragraphs} key={index}>
+                <p className={'paragraphs'} key={index}>
                   {paragraph}
                 </p>
               ))}

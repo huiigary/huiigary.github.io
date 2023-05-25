@@ -3,8 +3,7 @@
 // const Context = createContext()
 import { Grid, Typography, Box } from '@mui/material'
 import React, { useState } from 'react'
-// import '../styles/Home.css'
-// import '../styles/Colours.css'
+import '../styles/Home.css'
 import { MdEmail } from 'react-icons/md'
 import { SiAircanada } from 'react-icons/si'
 
@@ -30,7 +29,7 @@ export default function Home() {
       </Grid>
 
       <Grid item>
-        <div className='background_light' style={{}}>
+        <div style={{}}>
           <Typography variant='h2' fontWeight='bold'>
             Gary Hui
           </Typography>
