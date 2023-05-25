@@ -12,15 +12,14 @@ import Container from '@mui/material/Container'
 import MenuItem from '@mui/material/MenuItem'
 import AdbIcon from '@mui/icons-material/Adb'
 import { useState, useEffect } from 'react'
-// import '../styles/Navbar.css'
+import './Navbar.css'
 import HomeIcon from '@mui/icons-material/HomeOutlined'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined' // about
 import AssignmentIcon from '@mui/icons-material/AssignmentOutlined' // work
 import WorkHistoryIcon from '@mui/icons-material/WorkHistoryOutlined' // skills
 import AccountTreeIcon from '@mui/icons-material/AccountTreeOutlined' //projects
 import ContactPageIcon from '@mui/icons-material/ContactPageOutlined' // contacts
-import { Link } from 'next/link'
-// import { NavLink } from 'react-router-dom'
+import Link from 'next/link'
 
 const pages = [
   { name: 'Home', icon: <HomeIcon sx={{ color: '#293f50' }} /> },
@@ -34,14 +33,16 @@ const pages = [
 ]
 
 const navStyles = {
+  color: '#0e1333',
+  textDecoration: 'none',
+  fontWeight: 'bold',
+
   border: '2px solid black',
   borderRadius: '10px',
-  // width: '120px',
   width: '7rem',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-
   height: '50px',
   padding: 5,
   margin: 15,
@@ -141,9 +142,9 @@ export default function ResponsiveAppBar() {
             >
               {pages.map(({ name, icon }) => (
                 <MenuItem key={name} onClick={handleCloseNavMenu}>
-                  <a href={`${name}`}>
+                  <Link href={`${name}`}>
                     <Typography color={'#293f50'}>{name}</Typography>
-                  </a>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -179,20 +180,19 @@ export default function ResponsiveAppBar() {
             }}
           >
             {pages.map(({ name, icon }) => (
-              // <div key={name}>
-              //   {icon}..{name}
-              // </div>
-
-              <a
-                key={name}
-                href={`/${name}`}
-                // className={({ isActive }) => [isActive ? 'selected' : 'links']}
-                // style={navStyles}
-                // color='#293f50'
-              >
-                {icon}
-                {name}
-              </a>
+              <div key={name}>
+                <Link
+                  href={`/${name}`}
+                  // className={({ isActive }) => [
+                  //   isActive ? 'selected' : 'links',
+                  // ]}
+                  style={navStyles}
+                  className='links'
+                >
+                  {icon}
+                  {name}
+                </Link>
+              </div>
             ))}
           </Box>
         </Toolbar>
