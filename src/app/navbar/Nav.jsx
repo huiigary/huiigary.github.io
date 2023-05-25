@@ -83,6 +83,7 @@ export default function ResponsiveAppBar() {
 
   return (
     <AppBar
+      className='navbar'
       position='relative' // was sticky
       sx={{ backgroundColor: 'inherit' }}
       // sx={{ backgroundColor: 'inherit', opacity: scrolled ? 0.5 : 1 }}
