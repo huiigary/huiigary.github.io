@@ -3,14 +3,12 @@ import {
   Avatar,
   Card,
   CardContent,
-  Divider,
   Grid,
   List,
   ListItem,
   ListItemAvatar,
   ListItemText,
   Typography,
-  colors,
 } from '@mui/material'
 import React from 'react'
 import {
@@ -22,8 +20,6 @@ import {
   SiDocker,
   SiAngular,
   SiNodedotjs,
-  SiJavascript,
-  SiGo,
 } from 'react-icons/si'
 
 import { DiJava } from 'react-icons/di'
@@ -80,7 +76,7 @@ const skillCards = [
   },
 ]
 
-export function Skills() {
+export default function Skills() {
   return (
     <Grid
       container
