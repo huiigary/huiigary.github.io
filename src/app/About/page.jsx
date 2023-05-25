@@ -3,7 +3,7 @@ import { Grid, Stack, Typography, Box } from '@mui/material'
 import React from 'react'
 import Image from 'next/image'
 import styles from '../styles/About.module.css'
-// import Skills from '../components/skills'
+import Skills from '../components/skills'
 
 const aboutMeSentences = [
   'I am a skilled software developer from Vancouver, Canada, with front end experience in Typescript/Javascript and expertise in frameworks like Angular, React, and React-Native.',
@@ -65,7 +65,7 @@ export default function About() {
       </Box>
       {/* skills */}
       <Grid item marginTop={MARGIN}>
-        {/* <Skills /> */}
+        <Skills />
       </Grid>
     </Grid>
   )
