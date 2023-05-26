@@ -7,21 +7,21 @@ import {
   Typography,
   CardContent,
   CardHeader,
+  CardActions,
   IconButton,
+  Button,
 } from '@mui/material'
 import React from 'react'
-//   import '../styles/Projects.css'
-//   import '../styles/Colours.css'
-import { SocialIcon } from 'react-social-icons'
+import '../styles/Projects.css'
 
 const projects = [
   {
-    name: 'Simple Blog',
-    imageURL: './logo192.png',
+    name: 'Simple Weather App',
+    imageURL: '',
     description:
-      'Used Python with Django to create a simple blog. Created project to familiarize with Django for front and backend functionality.',
-    listOfTech: ['Django', 'Python'],
-    url: 'https://github.com/huiigary/simpleBlog',
+      'Used React to display the current weather and future weathers in a given city. Used OpenWeather API to get weather data',
+    listOfTech: ['React', 'OpenWeather API', 'MUI'],
+    url: 'https://github.com/huiigary/weatherApp',
   },
   {
     name: 'DNS-Client',
@@ -36,6 +36,7 @@ const projects = [
     imageURL: '',
     description: '',
     listOfTech: ['N/A'],
+    url: null,
   },
 ]
 
@@ -55,7 +56,6 @@ export default function Projects() {
         direction={'column'}
         alignItems={'center'}
         justifyContent={'center'}
-        // paddingX={45}
         paddingY={15}
       >
         <Typography variant='h3' fontWeight={'bold'}>
@@ -64,12 +64,12 @@ export default function Projects() {
 
         <Box
           sx={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3,auto)',
+            // gridTemplateColumns: 'repeat(3, auto)',
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            alignitems: 'center',
             gap: 5,
-            // direction: 'row',
-            // justifyContent: 'space-between',
-            // alignItems: 'flex-start',
             border: '2px solid black',
             marginTop: 2,
           }}
@@ -86,11 +86,10 @@ export default function Projects() {
                   maxWidth: 500,
                   width: card_width,
                   height: card_height,
-                  backgroundColor: 'white',
+                  backgroundColor: 'light grey',
                 }}
               >
                 {/* title  */}
-
                 <div
                   style={{
                     display: 'flex',
@@ -103,12 +102,6 @@ export default function Projects() {
                     action={<IconButton aria-label='settings'></IconButton>}
                     sx={{ textAlign: 'center', fontWeight: 'bold' }}
                   ></CardHeader>
-                  <SocialIcon
-                    network='github'
-                    url={project.url}
-                    target={'_blank'}
-                    style={{ fontSize: 'small' }}
-                  />
                 </div>
 
                 {/* image of project */}
@@ -133,11 +126,10 @@ export default function Projects() {
                   {/* list of tech */}
                   <div
                     style={{
-                      marginTop: 10,
+                      // marginTop: 10,
                       display: 'flex',
                       flexDirection: 'row',
                       justifyContent: 'flex-start',
-                      // alignItems: 'center',
                     }}
                   >
                     {project.listOfTech.map((tech, index) => (
@@ -151,6 +143,24 @@ export default function Projects() {
                     ))}
                   </div>
                 </CardContent>
+
+                {project.url ? (
+                  <CardActions>
+                    <Button
+                      variant='outlined'
+                      url={project.url}
+                      target={'_blank'}
+                      sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        width: '100%',
+                      }}
+                    >
+                      View Project
+                    </Button>
+                  </CardActions>
+                ) : null}
               </Card>
             </div>
           ))}
