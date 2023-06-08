@@ -34,10 +34,6 @@ export default function Contact() {
   const [displayIncompleteMessage, setDisplayIncompleteMessage] =
     useState(false)
 
-  const template_id = 'react_template_id'
-  const service_id = 'react_contact_detail'
-  const public_key = 'gzqYDH226zm5mP9TB'
-
   const displaySuccessMessage = () => {
     setWillPopupSuccess(true)
     setTimeout(() => setWillPopupSuccess(false), 5000)
@@ -53,21 +49,27 @@ export default function Contact() {
   }
 
   const sendEmail = (event) => {
-    console.log('clicked submit', { event }, form.current)
-    emailjs.sendForm(service_id, template_id, form.current, public_key).then(
-      (result) => {
-        // clear form input to prevent spam emails
-        // setValue('from_name', '')
-        // setValue('reply_to', '')
-        setValue('message', '')
-        displaySuccessMessage()
-        console.log(result.text, result)
-      },
-      (error) => {
-        displayErrorMessage()
-        console.log(error.text)
-      }
-    )
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          // clear form input to prevent spam emails
+          // setValue('from_name', '')
+          // setValue('reply_to', '')
+          setValue('message', '')
+          displaySuccessMessage()
+          console.log(result.text, result)
+        },
+        (error) => {
+          displayErrorMessage()
+          console.log(error.text)
+        }
+      )
   }
 
   // display message to user to complete form
