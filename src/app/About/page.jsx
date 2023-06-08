@@ -8,7 +8,7 @@ const aboutMeSentences = [
   'I am a skilled software developer from Vancouver, Canada, with front end experience in Typescript/Javascript and expertise in frameworks like Angular, React, and React-Native.',
   'In my career so far, my work focused on cross platform mobile app development and some backend experience with NodeJS, PostgreSQL, and GoLang, and expanding my skillset to become a full stack developer.',
   "I am a quick learner and have collaborated with stakeholders to collect requirements, create documentation, and plan designs for creating solutions. Let's work together to bring ideas to life!",
-  'Currently, I am learning Python and Django to further my knowledge of frontend and backend frameworks as a fullstack developer.',
+  'Currently, I am improving my knowledge of frontend and backend frameworks as a fullstack developer.',
 ]
 
 const MARGIN = 5
@@ -20,7 +20,7 @@ export default function About() {
       direction={'column'}
       alignItems={'center'}
       justifyContent={'center'}
-      paddingX={45}
+      // paddingX={45}
       paddingY={15}
     >
       <div>
@@ -34,7 +34,7 @@ export default function About() {
           marginTop: MARGIN,
         }}
       >
-        <Grid item>
+        <Grid item xs={4}>
           {/* <Image
             src='/profile_pic_400.png'
             alt='Profile iamge'

@@ -20,7 +20,7 @@ const projects = [
     imageURL: '',
     description:
       'Used React to display the current weather and future weathers in a given city. Used OpenWeather API to get weather data',
-    listOfTech: ['React', 'OpenWeather API', 'MUI'],
+    listOfTech: ['React', 'NextJS', 'OpenWeather API', 'MUI'],
     url: 'https://github.com/huiigary/weatherApp',
   },
   {
@@ -30,13 +30,6 @@ const projects = [
       'Simple recursive DNS-Client used to query messages from a given domain address. Project developed for a 300-level UBC course',
     listOfTech: ['Java', 'DNS'],
     url: 'https://github.com/huiigary/DNS-Client',
-  },
-  {
-    name: 'Upcoming!',
-    imageURL: '',
-    description: '',
-    listOfTech: ['N/A'],
-    url: null,
   },
 ]
 
