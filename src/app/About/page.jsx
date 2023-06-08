@@ -1,5 +1,5 @@
 'use client'
-import { Grid, Stack, Typography, Box } from '@mui/material'
+import { Grid, Typography, Box } from '@mui/material'
 import React from 'react'
 import '../styles/About.css'
 import Skills from '../components/Skills'
@@ -20,7 +20,7 @@ export default function About() {
       direction={'column'}
       alignItems={'center'}
       justifyContent={'center'}
-      // paddingX={45}
+      paddingX={45}
       paddingY={15}
     >
       <div>
@@ -29,38 +29,28 @@ export default function About() {
         </Typography>
       </div>
       <Box
+        gap={2}
         sx={{
           display: 'flex',
           marginTop: MARGIN,
         }}
       >
-        <Grid item xs={4}>
-          {/* <Image
-            src='/profile_pic_400.png'
-            alt='Profile iamge'
-            priority
-            className='profileImage'
-            width='auto'
-          /> */}
-          <img
-            src='/profile_pic_400.png'
-            alt='profile image'
-            className={'profileImage'}
-          ></img>
-        </Grid>
+        <img
+          src='/profile_pic_400.png'
+          alt='profile image'
+          className={'profileImage'}
+        ></img>
 
-        <Stack paddingLeft={5}>
-          <Grid item>
-            <Typography variant='h5'>Who am I ?</Typography>
-            <div>
-              {aboutMeSentences.map((paragraph, index) => (
-                <p className={'paragraphs'} key={index}>
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          </Grid>
-        </Stack>
+        <Grid item>
+          <Typography variant='h5'>Who am I ?</Typography>
+          <div>
+            {aboutMeSentences.map((paragraph, index) => (
+              <p className={'paragraphs'} key={index}>
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </Grid>
       </Box>
       {/* skills */}
       <Grid item marginTop={MARGIN}>

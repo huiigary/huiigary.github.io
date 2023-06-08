@@ -6,4 +6,7 @@
 .profileImage {
   border: 2px solid black;
   border-radius: 25px;
+  max-width: 100%;
+  /* padding-left: 50px; */
+  background-color: red;
 }

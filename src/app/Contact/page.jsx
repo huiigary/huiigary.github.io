@@ -169,7 +169,11 @@ export default function Contact() {
             />
           </div>
           {/* submit form button */}
-          <Button type='submit' variant='contained' style={{ display: 'flex' }}>
+          <Button
+            type='submit'
+            variant='contained'
+            style={{ display: 'flex', backgroundColor: 'blue' }}
+          >
             Submit
           </Button>
         </form>
