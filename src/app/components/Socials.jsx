@@ -2,7 +2,7 @@
 import { Button, Grid } from '@mui/material'
 import React from 'react'
 import { SocialIcon } from 'react-social-icons'
-// import '../styles/Socials.css'
+import '../styles/Socials.css'
 import DownloadIcon from '@mui/icons-material/Download'
 
 const styles = {
@@ -12,9 +12,15 @@ const styles = {
   },
 }
 
-export const Socials = () => {
+export default function Socials() {
   return (
-    <Grid container direction={'column'} spacing={2} marginTop={0}>
+    <Grid
+      container
+      direction={'column'}
+      justifyContent={'center'}
+      spacing={2}
+      marginTop={0}
+    >
       <Grid item className='header_socials'>
         {/* Check out my profiles */}
         <SocialIcon
@@ -22,17 +28,19 @@ export const Socials = () => {
           url='https://linkedin.com/in/hui-gary'
           target={'_blank'}
           label='linkedin'
+          fgColor='white'
         />
         <SocialIcon
           network='github'
           url='https://github.com/huiigary'
           target={'_blank'}
-          // className='btn'
+          fgColor='white'
         />
         <SocialIcon
           network='mailto'
           url='mailto:gary.hui75@gmail.com'
-          // className='btn'
+          bgColor='black'
+          fgColor='white'
         />
       </Grid>
 
@@ -40,11 +48,11 @@ export const Socials = () => {
         <Button
           variant='contained'
           size='large'
-          // fullWidth='true'
+          fullWidth='true'
           href='/GaryHui_Resume.pdf'
           target={'_blank'}
           className='btn'
-          sx={{ backgroundColor: '#293f50', borderRadius: '15px' }}
+          sx={{ borderRadius: '15px' }}
         >
           <DownloadIcon />
           <div>Download CV</div>
