@@ -28,7 +28,11 @@ body {
   /* background-color: var(--color-bg); */
 
   background: #648880;
-  background: linear-gradient(to right, #f6f1d3, #648880 85%, var(--darkColor));
+  /* background: linear-gradient(to right, #f6f1d3, #648880 85%, var(--darkColor)); */
+}
+
+img {
+  max-width: 100%;
 }
 
 html {

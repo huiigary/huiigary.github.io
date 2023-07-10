@@ -48,7 +48,7 @@ export default function Socials() {
         <Button
           variant='contained'
           size='large'
-          fullWidth='true'
+          fullWidth={true}
           href='/GaryHui_Resume.pdf'
           target={'_blank'}
           className='btn'

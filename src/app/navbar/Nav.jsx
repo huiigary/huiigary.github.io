@@ -85,7 +85,7 @@ export default function ResponsiveAppBar() {
   return (
     <AppBar
       className='navbar'
-      position='relative' // was sticky
+      position='relative' // was sticky  ... commenting this out --> fixes issue where shrinking
       sx={{ backgroundColor: 'inherit' }}
       // sx={{ backgroundColor: 'inherit', opacity: scrolled ? 0.5 : 1 }}
       style={{ paddingLeft: '2rem', paddingRight: '2rem' }}

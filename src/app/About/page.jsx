@@ -16,30 +16,36 @@ const MARGIN = 5
 export default function About() {
   return (
     <Grid
-      container
       direction={'column'}
       alignItems={'center'}
       justifyContent={'center'}
-      paddingX={45}
-      paddingY={15}
+      // paddingX={45}
+      // paddingY={15}
     >
       <div>
         <Typography variant='h3' fontWeight={'bold'}>
           About Me.
         </Typography>
       </div>
+
       <Box
         gap={2}
         sx={{
           display: 'flex',
+          // flexWrap: 'wrap', // Wrap prevents row view
           marginTop: MARGIN,
+          flexDirection: { xs: 'column', sm: 'row' },
         }}
       >
-        <img
-          src='/profile_pic_400.png'
-          alt='profile image'
-          className={'profileImage'}
-        ></img>
+        <Box
+          alt={'image of developer'}
+          component={'img'}
+          src={'./profile_pic_400.png'}
+          borderRadius={10}
+          border={'2px solid black'}
+          maxHeight={'25%'}
+          maxWidth={'25%'}
+        />
 
         <Grid item>
           <Typography variant='h5'>Who am I ?</Typography>
