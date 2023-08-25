@@ -16,6 +16,8 @@ const MARGIN = 5
 export default function About() {
   return (
     <Grid
+      id='About'
+      container
       direction={'column'}
       alignItems={'center'}
       justifyContent={'center'}

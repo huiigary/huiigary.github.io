@@ -3,3 +3,12 @@
   margin-bottom: 10px;
   overflow-wrap: break-word;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  overflow: wrap;
+}

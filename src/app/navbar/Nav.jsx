@@ -86,9 +86,11 @@ export default function ResponsiveAppBar() {
     <AppBar
       className='navbar'
       position='relative' // was sticky  ... commenting this out --> fixes issue where shrinking
-      sx={{ backgroundColor: 'inherit' }}
-      // sx={{ backgroundColor: 'inherit', opacity: scrolled ? 0.5 : 1 }}
-      style={{ paddingLeft: '2rem', paddingRight: '2rem' }}
+      sx={{
+        backgroundColor: '#inherit',
+        zIndex: 1,
+        position: 'fixed',
+      }}
     >
       <Container maxWidth='xl '>
         <Toolbar disableGutters>
@@ -142,9 +144,9 @@ export default function ResponsiveAppBar() {
             >
               {pages.map(({ name, icon }) => (
                 <MenuItem key={name} onClick={handleCloseNavMenu}>
-                  <Link href={`${name}`}>
+                  <a href={`#${name}`}>
                     <Typography color={'#293f50'}>{name}</Typography>
-                  </Link>
+                  </a>
                 </MenuItem>
               ))}
             </Menu>
@@ -181,17 +183,10 @@ export default function ResponsiveAppBar() {
           >
             {pages.map(({ name, icon }) => (
               <div key={name}>
-                <Link
-                  href={`/${name}`}
-                  // className={({ isActive }) => [
-                  //   isActive ? 'selected' : 'links',
-                  // ]}
-                  style={navStyles}
-                  className='links'
-                >
+                <a href={`#${name}`} style={navStyles} className='links'>
                   {icon}
                   {name}
-                </Link>
+                </a>
               </div>
             ))}
           </Box>

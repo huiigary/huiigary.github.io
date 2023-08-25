@@ -45,6 +45,7 @@ export default function Projects() {
   return (
     <div>
       <Grid
+        id='Projects'
         container
         direction={'column'}
         alignItems={'center'}

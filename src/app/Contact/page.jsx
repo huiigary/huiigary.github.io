@@ -82,6 +82,7 @@ export default function Contact() {
 
   return (
     <Grid
+      id='Contact'
       container
       justifyContent={'center'}
       alignItems={'flex-start'}
