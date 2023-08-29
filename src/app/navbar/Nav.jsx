@@ -1,44 +1,43 @@
 'use client'
 
 import * as React from 'react'
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import Toolbar from '@mui/material/Toolbar'
-import IconButton from '@mui/material/IconButton'
-import Typography from '@mui/material/Typography'
-import Menu from '@mui/material/Menu'
-import MenuIcon from '@mui/icons-material/Menu'
-import Container from '@mui/material/Container'
-import MenuItem from '@mui/material/MenuItem'
-import AdbIcon from '@mui/icons-material/Adb'
-import { useState, useEffect } from 'react'
 import '../styles/Navbar.css'
+import { useState, useEffect } from 'react'
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  Menu,
+  Container,
+  MenuItem,
+} from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
+import AdbIcon from '@mui/icons-material/Adb'
 import HomeIcon from '@mui/icons-material/HomeOutlined'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined' // about
 import AssignmentIcon from '@mui/icons-material/AssignmentOutlined' // work
-import WorkHistoryIcon from '@mui/icons-material/WorkHistoryOutlined' // skills
 import AccountTreeIcon from '@mui/icons-material/AccountTreeOutlined' //projects
 import ContactPageIcon from '@mui/icons-material/ContactPageOutlined' // contacts
-import Link from 'next/link'
 
 const pages = [
-  { name: 'Home', icon: <HomeIcon sx={{ color: '#293f50' }} /> },
+  { name: 'Home', icon: <HomeIcon /> },
   {
     name: 'About',
-    icon: <PersonOutlineOutlinedIcon sx={{ color: '#293f50' }} />,
+    icon: <PersonOutlineOutlinedIcon />,
   },
-  { name: 'Work', icon: <AssignmentIcon sx={{ color: '#293f50' }} /> },
-  { name: 'Projects', icon: <AccountTreeIcon sx={{ color: '#293f50' }} /> },
-  { name: 'Contact', icon: <ContactPageIcon sx={{ color: '#293f50' }} /> },
+  { name: 'Work', icon: <AssignmentIcon /> },
+  { name: 'Projects', icon: <AccountTreeIcon /> },
+  { name: 'Contact', icon: <ContactPageIcon /> },
 ]
 
 const navStyles = {
-  color: '#0e1333',
   textDecoration: 'none',
-  fontWeight: 'bold',
+  fontWeight: '200px',
 
-  border: '2px solid black',
-  borderRadius: '10px',
+  // border: '2px solid black',
+  // borderRadius: '10px',
   width: '7rem',
   display: 'flex',
   justifyContent: 'center',
@@ -46,12 +45,10 @@ const navStyles = {
   height: '50px',
   padding: 5,
   margin: 15,
-  '&.MuiButtonOutlined': {
-    border: '2px solid #293f50',
-    margin: 2,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-  },
+  // '&.MuiButtonOutlined': {
+  //   border: '2px solid #293f50',
+  //   margin: 2,
+  // },
 }
 
 export default function ResponsiveAppBar() {
@@ -84,19 +81,18 @@ export default function ResponsiveAppBar() {
 
   return (
     <AppBar
-      className='navbar'
       position='relative' // was sticky  ... commenting this out --> fixes issue where shrinking
       sx={{
-        backgroundColor: '#inherit',
         zIndex: 1,
         position: 'fixed',
+        backgroundColor: '#293f50',
       }}
     >
       <Container maxWidth='xl '>
         <Toolbar disableGutters>
           <AdbIcon
             sx={{
-              display: { xs: 'none', md: 'flex', color: '#293f50' },
+              display: { xs: 'none', md: 'flex' },
               mr: 1,
             }}
           />
@@ -108,7 +104,6 @@ export default function ResponsiveAppBar() {
               mr: 2,
               display: { xs: 'none', md: 'flex' },
               fontWeight: 700,
-              color: '#293f50',
             }}
           >
             Gary Hui
@@ -122,7 +117,7 @@ export default function ResponsiveAppBar() {
               onClick={handleOpenNavMenu}
               color='inherit'
             >
-              <MenuIcon sx={{ color: '#293f50' }} />
+              <MenuIcon />
             </IconButton>
             <Menu
               id='menu-appbar'
@@ -145,7 +140,7 @@ export default function ResponsiveAppBar() {
               {pages.map(({ name, icon }) => (
                 <MenuItem key={name} onClick={handleCloseNavMenu}>
                   <a href={`#${name}`}>
-                    <Typography color={'#293f50'}>{name}</Typography>
+                    <Typography>{name}</Typography>
                   </a>
                 </MenuItem>
               ))}
@@ -183,7 +178,7 @@ export default function ResponsiveAppBar() {
           >
             {pages.map(({ name, icon }) => (
               <div key={name}>
-                <a href={`#${name}`} style={navStyles} className='links'>
+                <a href={`#${name}`} style={navStyles}>
                   {icon}
                   {name}
                 </a>

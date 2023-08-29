@@ -1,48 +1,16 @@
-.selected {
-  background-color: #f6f1d3;
-  color: #0e1333;
-  font-weight: bold;
+a {
+  color: white;
   text-decoration: none;
+  font-weight: 400;
+  font-size: large;
 }
 
-.selected:hover {
-  color: #293f50;
-}
-
-.links {
-  color: #0e1333;
-
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.links2_removed::after {
-  /* Require empty content to generate using this AFTER tag */
-  content: '';
-  /* absolute position puts the line to closests positioned ancestor (the .link) */
-  position: absolute;
-  /* width100 ensures it spanks entire link */
-  width: 100%;
-  /* scaleX(0) iniitally hides the line by seting hoizontal scale to 0 */
-  transform: scaleX(0);
-  height: 2px;
-  /* bottom + left create the underline effect from the left bottom side */
-  bottom: 0;
-  left: 0;
-  /*  */
-  background-color: white;
-  /* transform-origin: bottom right; */
-  transition: transform 0.5s ease-out;
-}
-
-.links:hover {
+a:hover {
   font-weight: bold;
   transition: 0.3s ease-in-out;
-  background-color: #f6f1d3;
-  color: #293f50;
 }
 
-.links:hover::after {
+/* .links:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
-}
+} */

@@ -15,20 +15,14 @@
 }
 
 :root {
-  --color-bg: #1f1f38;
-  --color-bg2: #2e2e53;
-  --color-primary: #4ddbff;
+  --color-bg: rgba(242, 242, 242, 0.6);
   --transition: all 400 ease;
   --darkColor: #293f50;
 }
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.7;
-  /* color: black; */
-  /* background-color: var(--color-bg); */
-
-  background: #648880;
-  /* background: linear-gradient(to right, #f6f1d3, #648880 85%, var(--darkColor)); */
+  background: var(--color-bg);
 }
 
 img {
@@ -38,27 +32,3 @@ img {
 html {
   scroll-behavior: smooth;
 }
-
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
