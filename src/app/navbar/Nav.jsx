@@ -63,22 +63,6 @@ export default function ResponsiveAppBar() {
     setAnchorElNav(null)
   }
 
-  const [scrolled, setScrolled] = useState(false)
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY
-      if (scrollTop > 100) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
     <AppBar
       position='relative' // was sticky  ... commenting this out --> fixes issue where shrinking
@@ -140,7 +124,7 @@ export default function ResponsiveAppBar() {
               {pages.map(({ name, icon }) => (
                 <MenuItem key={name} onClick={handleCloseNavMenu}>
                   <a href={`#${name}`}>
-                    <Typography>{name}</Typography>
+                    <Typography color={'black'}>{name}</Typography>
                   </a>
                 </MenuItem>
               ))}
