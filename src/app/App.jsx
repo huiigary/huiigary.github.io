@@ -5,6 +5,7 @@ import Work from './Work/page'
 import Projects from './Projects/page'
 import Contact from './Contact/page'
 import ResponsiveAppBar from './navbar/Nav'
+import Skills from './components/Skills'
 const theme = createTheme({
   typography: {
     fontFamily: ['Poppins', 'sans-serif'].join(','),
@@ -18,6 +19,7 @@ export function App() {
         <ResponsiveAppBar />
         <Home />
         <About />
+        <Skills />
         <Work />
         <Projects />
         <Contact />

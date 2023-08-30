@@ -13,23 +13,28 @@ import {
   Container,
   MenuItem,
 } from '@mui/material'
+
+import {
+  Laptop,
+  Adb,
+  Home,
+  PersonOutlineOutlined,
+  Assignment,
+  AccountTree,
+  ContactPage,
+} from '@mui/icons-material'
 import MenuIcon from '@mui/icons-material/Menu'
-import AdbIcon from '@mui/icons-material/Adb'
-import HomeIcon from '@mui/icons-material/HomeOutlined'
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined' // about
-import AssignmentIcon from '@mui/icons-material/AssignmentOutlined' // work
-import AccountTreeIcon from '@mui/icons-material/AccountTreeOutlined' //projects
-import ContactPageIcon from '@mui/icons-material/ContactPageOutlined' // contacts
 
 const pages = [
-  { name: 'Home', icon: <HomeIcon /> },
+  { name: 'Home', icon: <Home /> },
   {
     name: 'About',
-    icon: <PersonOutlineOutlinedIcon />,
+    icon: <PersonOutlineOutlined />,
   },
-  { name: 'Work', icon: <AssignmentIcon /> },
-  { name: 'Projects', icon: <AccountTreeIcon /> },
-  { name: 'Contact', icon: <ContactPageIcon /> },
+  { name: 'Work', icon: <Assignment /> },
+  { name: 'Skills', icon: <Laptop /> },
+  { name: 'Projects', icon: <AccountTree /> },
+  { name: 'Contact', icon: <ContactPage /> },
 ]
 
 const navStyles = {
@@ -74,7 +79,7 @@ export default function ResponsiveAppBar() {
     >
       <Container maxWidth='xl '>
         <Toolbar disableGutters>
-          <AdbIcon
+          <Adb
             sx={{
               display: { xs: 'none', md: 'flex' },
               mr: 1,
@@ -130,7 +135,7 @@ export default function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Adb sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
 
           {/* Conditional: Name displayed when screen is small */}
           <Typography
