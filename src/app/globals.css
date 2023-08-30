@@ -15,7 +15,8 @@
 }
 
 :root {
-  --color-bg: rgba(242, 242, 242, 0.6);
+  --color-bg: white;
+  /* --color-bg: rgba(242, 242, 242, 0.6); */
   --transition: all 400 ease;
   --darkColor: #293f50;
 }

@@ -1,68 +1,54 @@
 'use client'
-import { Grid, Typography, Box } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import React from 'react'
 import '../styles/About.css'
-import Skills from '../components/Skills'
+import { colors } from '../../../colors'
 
 const aboutMeSentences = [
-  'I am a skilled software developer from Vancouver, Canada, with front end experience in Typescript/Javascript and expertise in frameworks like Angular, React, and React-Native.',
-  'In my career so far, my work focused on cross platform mobile app development and some backend experience with NodeJS, PostgreSQL, and GoLang, and expanding my skillset to become a full stack developer.',
-  "I am a quick learner and have collaborated with stakeholders to collect requirements, create documentation, and plan designs for creating solutions. Let's work together to bring ideas to life!",
-  'Currently, I am improving my knowledge of frontend and backend frameworks as a fullstack developer.',
+  'I am a software developer from Vancouver, Canada, with front-end experience in TypeScript/JavaScript and expertise in frameworks like Angular, React, and React-Native.',
+  'So far my career has led to the focus of cross platform mobile app development for a couple companies where I worked on the front-end and had some backend experience with PostgreSQL, NodeJs, and GoLang.',
+  'I am experienced working in a small-team startup setting with an agile development process and also independently where I led the development and successfully communicated daily progress updates to my manager to ensure we are synced up.',
+  "I am a quick learner and have collaborated with stakeholders to collect requirements for wireframe design with Adobe XD and Draw.io, create software design documentation, and discussed software solutions in a team setting. Let's work together to bring ideas to life!",
+  'Currently, I am improving my knowledge as a fullstack developer by creating web applications with new tools/stack I wanted to try like NextJs and PERN stack. Feel free head over to my Github to see what I have worked on so far!',
 ]
 
-const MARGIN = 5
-
 export default function About() {
+  // To allow anchor scroll to show the "About" header
+  const Anchor = ({ id, children }) => (
+    <div
+      id={id}
+      style={{
+        display: 'block',
+        position: 'relative',
+        top: '-5rem',
+        visibility: 'hidden',
+      }}
+    >
+      {children}
+    </div>
+  )
   return (
     <Grid
-      id='About'
       container
       direction={'column'}
       alignItems={'center'}
       justifyContent={'center'}
-      // paddingX={45}
-      // paddingY={15}
+      backgroundColor={colors.backgroundGrey}
+      padding={10}
     >
-      <div>
+      <Grid item>
+        <Anchor id='About'></Anchor>
         <Typography variant='h3' fontWeight={'bold'}>
-          About Me.
+          About
         </Typography>
-      </div>
+      </Grid>
 
-      <Box
-        gap={2}
-        sx={{
-          display: 'flex',
-          // flexWrap: 'wrap', // Wrap prevents row view
-          marginTop: MARGIN,
-          flexDirection: { xs: 'column', sm: 'row' },
-        }}
-      >
-        <Box
-          alt={'image of developer'}
-          component={'img'}
-          src={'./profile_pic_400.png'}
-          borderRadius={10}
-          border={'2px solid black'}
-          maxHeight={'25%'}
-          maxWidth={'25%'}
-        />
-
-        <Grid item>
-          <Typography variant='h5'>Who am I ?</Typography>
-          <div>
-            {aboutMeSentences.map((paragraph, index) => (
-              <p className={'paragraphs'} key={index}>
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </Grid>
-      </Box>
-      {/* skills */}
-      <Grid item marginTop={MARGIN}>
-        <Skills />
+      <Grid item>
+        {aboutMeSentences.map((paragraph, index) => (
+          <p className={'paragraphs'} key={index}>
+            {paragraph}
+          </p>
+        ))}
       </Grid>
     </Grid>
   )
