@@ -5,8 +5,26 @@ import '../styles/Home.css'
 import { MdEmail } from 'react-icons/md'
 import { SiAircanada } from 'react-icons/si'
 import Socials from '../components/Socials'
+import { colors } from '../../../colors'
 
 export default function Home() {
+  const StyledBox = ({ children }) => (
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 1,
+        mt: 2,
+      }}
+    >
+      {children}
+    </Box>
+  )
+
+  const InfoText = ({ children }) => (
+    <Typography sx={{ fontSize: '1.5rem' }}>{children}</Typography>
+  )
+
   return (
     <Grid
       container
@@ -14,13 +32,16 @@ export default function Home() {
       alignItems='center'
       id='Home'
       direction={{ xs: 'column', md: 'row' }} // allows page to retain shape and be responsive instead img/card being cutoff
-      // paddingY={15}
-      // paddingX={45}
       height='100vh' // this 100vH makes the page take the whole
       spacing={3}
+      sx={{
+        backgroundImage: `url("/gradient-bkgrnd.png")`,
+        backgroundSize: 'cover',
+        backgroundColor: colors.primary,
+      }}
     >
+      {/* My image  */}
       <Box
-        // className='avatar'
         alt={'image of developer'}
         component={'img'}
         src={'./profile_pic_400.png'}
@@ -28,11 +49,13 @@ export default function Home() {
         mr={{ xs: 0, md: '2rem' }}
         borderRadius={10}
       />
+
+      {/* Info section */}
       <Grid
         item
         sx={{
           borderRadius: '1rem',
-          background: 'rgba(0, 0, 0, 0.2)',
+          backgroundColor: colors.white,
           padding: '1rem 2rem',
         }}
       >
@@ -40,27 +63,17 @@ export default function Home() {
           Gary Hui
         </Typography>
         <Typography variant='h4'>Software Developer</Typography>
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 1,
-            lineHeight: 1.7,
-          }}
-        >
+
+        <StyledBox>
           <SiAircanada color='red' fontSize={'1.5rem'} />
-          <div style={{ lineHeight: 2 }}>Based in Vancouver, BC</div>
-        </Box>
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 1,
-          }}
-        >
+          <InfoText>Based in Vancouver, BC</InfoText>
+        </StyledBox>
+
+        <StyledBox>
           <MdEmail fontSize={'1.5rem'} />
-          <div style={{ lineHeight: 2 }}>gary.hui75@gmail.com</div>
-        </Box>
+          <InfoText>gary.hui75@gmail.com</InfoText>
+        </StyledBox>
+
         <Socials />
       </Grid>
     </Grid>
