@@ -31,8 +31,8 @@ const pages = [
     name: 'About',
     icon: <PersonOutlineOutlined />,
   },
-  { name: 'Work', icon: <Assignment /> },
   { name: 'Skills', icon: <Laptop /> },
+  { name: 'Work', icon: <Assignment /> },
   { name: 'Projects', icon: <AccountTree /> },
   { name: 'Contact', icon: <ContactPage /> },
 ]

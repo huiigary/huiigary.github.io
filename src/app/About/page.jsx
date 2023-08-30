@@ -33,7 +33,7 @@ export default function About() {
       direction={'column'}
       alignItems={'center'}
       justifyContent={'center'}
-      backgroundColor={colors.backgroundGrey}
+      backgroundColor={colors.background}
       padding={10}
     >
       <Grid item>
