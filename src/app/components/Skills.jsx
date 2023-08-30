@@ -78,8 +78,9 @@ const skillCards = [
 ]
 
 export default function Skills() {
-  const SkillItem = ({ children }) => (
+  const SkillItem = ({ key, children }) => (
     <div
+      key={key}
       style={{
         display: 'inline-block',
         textAlign: 'center',
@@ -152,7 +153,7 @@ export default function Skills() {
 
       <Grid item>
         {proficient_skills_list.map(({ icon, label }) => (
-          <SkillItem>
+          <SkillItem key={label}>
             {/* {icon} */}
             {label}
           </SkillItem>
@@ -161,7 +162,7 @@ export default function Skills() {
 
       <Grid item>
         {familiar_skills_list.map(({ icon, label }) => (
-          <SkillItem>
+          <SkillItem key={label}>
             {/* {icon} */}
             {label}
           </SkillItem>
