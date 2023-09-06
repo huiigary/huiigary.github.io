@@ -34,7 +34,7 @@ const pages = [
   { name: 'Skills', icon: <Laptop /> },
   { name: 'Experience', icon: <Assignment /> },
   { name: 'Projects', icon: <AccountTree /> },
-  { name: 'Contact', icon: <ContactPage /> },
+  // { name: 'Contact', icon: <ContactPage /> },
 ]
 
 const navStyles = {

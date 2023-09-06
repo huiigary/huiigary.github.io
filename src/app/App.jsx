@@ -22,7 +22,6 @@ export function App() {
         <Skills />
         <Experience />
         <Projects />
-        <Contact />
       </div>
     </ThemeProvider>
   )
