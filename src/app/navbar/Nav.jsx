@@ -32,7 +32,7 @@ const pages = [
     icon: <PersonOutlineOutlined />,
   },
   { name: 'Skills', icon: <Laptop /> },
-  { name: 'Work', icon: <Assignment /> },
+  { name: 'Experience', icon: <Assignment /> },
   { name: 'Projects', icon: <AccountTree /> },
   { name: 'Contact', icon: <ContactPage /> },
 ]

@@ -1,7 +1,7 @@
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import Home from './Home/page'
 import About from './About/page'
-import Work from './Work/page'
+import Experience from './Experience/page'
 import Projects from './Projects/page'
 import Contact from './Contact/page'
 import ResponsiveAppBar from './navbar/Nav'
@@ -20,7 +20,7 @@ export function App() {
         <Home />
         <About />
         <Skills />
-        <Work />
+        <Experience />
         <Projects />
         <Contact />
       </div>
