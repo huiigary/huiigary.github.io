@@ -13,35 +13,19 @@ const aboutMeSentences = [
 ]
 
 export default function About() {
-  // To allow anchor scroll to show the "About" header
-  const Anchor = ({ id, children }) => (
-    <div
-      id={id}
-      style={{
-        display: 'block',
-        position: 'relative',
-        top: '-5rem',
-        visibility: 'hidden',
-      }}
-    >
-      {children}
-    </div>
-  )
   return (
     <Grid
       container
+      id='About'
       direction={'column'}
       alignItems={'center'}
       justifyContent={'center'}
       backgroundColor={colors.background}
-      padding={10}
+      padding={{ xs: 5, md: 10 }}
     >
-      <Grid item>
-        <Anchor id='About'></Anchor>
-        <Typography variant='h3' fontWeight={'bold'}>
-          About
-        </Typography>
-      </Grid>
+      <Typography variant='h3' fontWeight={'bold'} color={colors.primary}>
+        About
+      </Typography>
 
       <Grid item>
         {aboutMeSentences.map((paragraph, index) => (

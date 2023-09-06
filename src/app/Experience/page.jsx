@@ -125,13 +125,12 @@ export default function Experience() {
   return (
     <div>
       <Grid
-        id='Experience'
         container
+        id='Experience'
         direction={'column'}
         justifyContent={'center'}
         alignItems={'center'}
-        padding={10}
-        spacing={5}
+        padding={{ xs: 5, md: 10 }}
         backgroundColor={colors.background}
       >
         <Typography variant='h3' fontWeight={'bold'} color={colors.primary}>
@@ -155,8 +154,10 @@ export default function Experience() {
                 {/* BLE app */}
                 <Typography variant='h6'>Device Manager BLE App</Typography>
                 {sendumExperience.projects[0].descriptions.map(
-                  (description) => (
-                    <p style={{ marginTop: 10 }}>{description}</p>
+                  (description, index) => (
+                    <p key={index} style={{ marginTop: 10 }}>
+                      {description}
+                    </p>
                   )
                 )}
               </section>
@@ -165,8 +166,10 @@ export default function Experience() {
               <section style={{ paddingTop: 20 }}>
                 <Typography variant='h6'>Driver Tasklist App</Typography>
                 {sendumExperience.projects[1].descriptions.map(
-                  (description) => (
-                    <p style={{ marginTop: 10 }}>{description}</p>
+                  (description, index) => (
+                    <p key={index} style={{ marginTop: 10 }}>
+                      {description}
+                    </p>
                   )
                 )}
               </section>
@@ -211,8 +214,8 @@ export default function Experience() {
                 >
                   <Typography variant='h6'>Diabits</Typography>
                   {bioconsciousExperience.projects[0].descriptions.map(
-                    (description) => (
-                      <p>{description}</p>
+                    (description, index) => (
+                      <p key={index}>{description}</p>
                     )
                   )}
                 </Box>
@@ -234,8 +237,8 @@ export default function Experience() {
                 >
                   <Typography variant='h6'>Endobits</Typography>
                   {bioconsciousExperience.projects[1].descriptions.map(
-                    (description) => (
-                      <p>{description}</p>
+                    (description, index) => (
+                      <p key={index}>{description}</p>
                     )
                   )}
                   <img src='./endobits_img.png'></img>

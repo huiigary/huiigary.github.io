@@ -13,6 +13,7 @@ import {
 } from '@mui/material'
 import React from 'react'
 import '../styles/Projects.css'
+import { colors } from '../../../colors'
 
 const projects = [
   {
@@ -50,9 +51,9 @@ export default function Projects() {
         direction={'column'}
         alignItems={'center'}
         justifyContent={'center'}
-        paddingY={15}
+        padding={{ xs: 5, md: 10 }}
       >
-        <Typography variant='h3' fontWeight={'bold'}>
+        <Typography variant='h3' fontWeight={'bold'} color={colors.primary}>
           Projects
         </Typography>
 

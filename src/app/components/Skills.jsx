@@ -97,11 +97,11 @@ export default function Skills() {
   return (
     <Grid
       container
+      id='Skills'
       direction={'column'}
       justifyContent={'center'}
       alignItems={'center'}
-      id='Skills'
-      padding={10}
+      padding={{ xs: 5, md: 10 }}
       backgroundColor={colors.white}
     >
       <Typography variant='h3' fontWeight={'bold'} color={colors.primary}>
@@ -112,8 +112,8 @@ export default function Skills() {
       <Grid
         item
         sx={{
-          display: 'inline-grid',
-          gridTemplateColumns: 'auto auto',
+          display: { md: 'inline-grid' },
+          gridTemplateColumns: { md: 'auto auto' },
           columnGap: 2,
           margin: 8,
         }}

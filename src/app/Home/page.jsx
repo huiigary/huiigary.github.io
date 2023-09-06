@@ -31,9 +31,7 @@ export default function Home() {
       justifyContent={'center'}
       alignItems='center'
       id='Home'
-      direction={{ xs: 'column', md: 'row' }} // allows page to retain shape and be responsive instead img/card being cutoff
       height='100vh' // this 100vH makes the page take the whole
-      spacing={3}
       sx={{
         backgroundImage: `url("/gradient-bkgrnd.png")`,
         backgroundSize: 'cover',
