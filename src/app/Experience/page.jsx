@@ -95,9 +95,9 @@ const SkillContainer = ({ children }) => (
   </Box>
 )
 
-const SkillItem = ({ children, index }) => (
+const SkillItem = ({ children, key }) => (
   <Button
-    key={index}
+    key={key}
     variant='outlined'
     sx={{
       color: colors.skills,
@@ -176,7 +176,7 @@ export default function Experience() {
               {/* list of Sendum stack */}
               <SkillContainer>
                 {sendumExperience.tools.map((tool, index) => (
-                  <SkillItem index={index}>{tool}</SkillItem>
+                  <SkillItem key={index}>{tool}</SkillItem>
                 ))}
               </SkillContainer>
             </CardContent>
@@ -270,7 +270,7 @@ export default function Experience() {
               {/* List of frameworks and tools used at work */}
               <SkillContainer>
                 {bioconsciousExperience.tools.map((tool, index) => (
-                  <SkillItem index={index}>{tool}</SkillItem>
+                  <SkillItem key={index}>{tool}</SkillItem>
                 ))}
               </SkillContainer>
             </CardContent>
