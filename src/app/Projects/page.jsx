@@ -77,12 +77,12 @@ export default function Projects() {
                   console.log('clicked card')
                   window.open(project.url, '_blank')
                 }}
-                sx={{
-                  maxWidth: 500,
-                  width: card_width,
-                  height: card_height,
-                  backgroundColor: 'light grey',
-                }}
+                // sx={{
+                //   maxWidth: 500,
+                //   width: card_width,
+                //   height: card_height,
+                //   backgroundColor: 'light grey',
+                // }}
               >
                 {/* title  */}
                 <div
@@ -131,7 +131,7 @@ export default function Projects() {
                       <Typography
                         variant='body2'
                         key={index}
-                        sx={{ marginX: 1 }}
+                        // sx={{ marginX: 1 }}
                       >
                         #{tech}
                       </Typography>
