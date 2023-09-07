@@ -133,7 +133,12 @@ export default function Experience() {
         padding={{ xs: 5, md: 10 }}
         backgroundColor={colors.background}
       >
-        <Typography variant='h3' fontWeight={'bold'} color={colors.primary}>
+        <Typography
+          variant='h3'
+          fontWeight={'bold'}
+          color={colors.primary}
+          marginBottom={2}
+        >
           Experience
         </Typography>
         {/*  Sendum Card */}

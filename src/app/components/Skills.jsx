@@ -104,7 +104,12 @@ export default function Skills() {
       padding={{ xs: 5, md: 10 }}
       backgroundColor={colors.white}
     >
-      <Typography variant='h3' fontWeight={'bold'} color={colors.primary}>
+      <Typography
+        variant='h3'
+        fontWeight={'bold'}
+        color={colors.primary}
+        marginBottom={2}
+      >
         Skills
       </Typography>
 
@@ -115,7 +120,7 @@ export default function Skills() {
           display: { md: 'inline-grid' },
           gridTemplateColumns: { md: 'auto auto' },
           columnGap: 2,
-          margin: 8,
+          // margin: 8,
         }}
       >
         {skillCards.map((skill, index) => (
@@ -125,7 +130,6 @@ export default function Skills() {
             sx={{
               my: 2,
               p: 2,
-              // background: 'linear-gradient(to left, #f6f1d3 50%, #648880)',
               backgroundColor: colors.background,
               border: '2px solid black',
               borderRadius: '25px',
@@ -143,31 +147,33 @@ export default function Skills() {
       </Grid>
 
       {/* List of Languages and Tools */}
-      <Typography
-        fontSize={'large'}
-        fontWeight='bold'
-        sx={{ textAlign: 'center' }}
-      >
-        Languages and Tools
-      </Typography>
+      <div style={{ marginTop: '1rem' }}>
+        <Typography
+          fontSize={'large'}
+          fontWeight='bold'
+          sx={{ textAlign: 'center' }}
+        >
+          Languages and Tools
+        </Typography>
 
-      <Grid item>
-        {proficient_skills_list.map(({ icon, label }) => (
-          <SkillItem key={label}>
-            {/* {icon} */}
-            {label}
-          </SkillItem>
-        ))}
-      </Grid>
+        <Grid item>
+          {proficient_skills_list.map(({ icon, label }) => (
+            <SkillItem key={label}>
+              {/* {icon} */}
+              {label}
+            </SkillItem>
+          ))}
+        </Grid>
 
-      <Grid item>
-        {familiar_skills_list.map(({ icon, label }) => (
-          <SkillItem key={label}>
-            {/* {icon} */}
-            {label}
-          </SkillItem>
-        ))}
-      </Grid>
+        <Grid item>
+          {familiar_skills_list.map(({ icon, label }) => (
+            <SkillItem key={label}>
+              {/* {icon} */}
+              {label}
+            </SkillItem>
+          ))}
+        </Grid>
+      </div>
     </Grid>
   )
 }

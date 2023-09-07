@@ -7,24 +7,24 @@ import { SiAircanada } from 'react-icons/si'
 import Socials from '../components/Socials'
 import { colors } from '../../../colors'
 
+const StyledBox = ({ children }) => (
+  <Box
+    sx={{
+      display: 'flex',
+      alignItems: 'center',
+      gap: 1,
+      mt: 2,
+    }}
+  >
+    {children}
+  </Box>
+)
+
+const InfoText = ({ children }) => (
+  <Typography sx={{ fontSize: '1.5rem' }}>{children}</Typography>
+)
+
 export default function Home() {
-  const StyledBox = ({ children }) => (
-    <Box
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: 1,
-        mt: 2,
-      }}
-    >
-      {children}
-    </Box>
-  )
-
-  const InfoText = ({ children }) => (
-    <Typography sx={{ fontSize: '1.5rem' }}>{children}</Typography>
-  )
-
   return (
     <Grid
       container
@@ -48,13 +48,14 @@ export default function Home() {
         borderRadius={10}
       />
 
-      {/* Info section */}
+      {/* Info card */}
       <Grid
         item
         sx={{
           borderRadius: '1rem',
           backgroundColor: colors.white,
           padding: '1rem 2rem',
+          marginBottom: { xs: 5, md: 0 },
         }}
       >
         <Typography variant='h2' fontWeight='bold'>

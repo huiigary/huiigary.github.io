@@ -23,7 +23,12 @@ export default function About() {
       backgroundColor={colors.background}
       padding={{ xs: 5, md: 10 }}
     >
-      <Typography variant='h3' fontWeight={'bold'} color={colors.primary}>
+      <Typography
+        variant='h3'
+        fontWeight={'bold'}
+        color={colors.primary}
+        marginBottom={2}
+      >
         About
       </Typography>
 
