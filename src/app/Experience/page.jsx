@@ -12,6 +12,7 @@ import {
 import React from 'react'
 // import '../styles/Experience.css'
 import { colors } from '../../../colors'
+import Image from 'next/image'
 
 const sendumExperience = {
   name: 'Sendum Wireless Corp',
@@ -203,6 +204,7 @@ export default function Experience() {
 
             {/* content */}
             <CardContent>
+              {/* Diabits */}
               <Box
                 sx={{
                   display: 'flex',
@@ -213,8 +215,8 @@ export default function Experience() {
                   id='diabits'
                   sx={{
                     paddingTop: '20px',
-                    paddingRight: 10,
-                    width: '80%',
+                    // paddingRight: 10,
+                    // width: '80%',
                   }}
                 >
                   <Typography variant='h6'>Diabits</Typography>
@@ -225,19 +227,23 @@ export default function Experience() {
                   )}
                 </Box>
                 {/* diabits app image */}
-                <img
-                  src='./diabits_img.png'
-                  style={{ width: 300, height: 500 }}
-                ></img>
+
+                <Image
+                  src='/diabits_img.png'
+                  width={300}
+                  height={500}
+                  alt='Diabits'
+                />
               </Box>
 
+              {/* Endobits  */}
               <Box sx={{ direction: 'row' }}>
                 <Box
                   id='endobits'
                   sx={{
-                    width: '80%',
                     paddingTop: '20px',
-                    paddingRight: 10,
+                    // width: '80%',
+                    // paddingRight: 10,
                   }}
                 >
                   <Typography variant='h6'>Endobits</Typography>

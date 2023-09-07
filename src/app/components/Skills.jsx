@@ -79,12 +79,12 @@ const skillCards = [
 
 export default function Skills() {
   const SkillItem = ({ key, children }) => (
-    <div
+    <Box
       key={key}
-      style={{
+      sx={{
         display: 'inline-block',
         textAlign: 'center',
-        padding: '2rem 2rem',
+        padding: { xs: '0.5rem', md: '1.5rem' },
         margin: '0.5rem',
         border: '2px solid black',
         color: colors.white,
@@ -92,7 +92,7 @@ export default function Skills() {
       }}
     >
       {children}
-    </div>
+    </Box>
   )
   return (
     <Grid
@@ -103,6 +103,7 @@ export default function Skills() {
       alignItems={'center'}
       padding={{ xs: 5, md: 10 }}
       backgroundColor={colors.white}
+      spacing={2}
     >
       <Typography
         variant='h3'
@@ -147,11 +148,11 @@ export default function Skills() {
       </Grid>
 
       {/* List of Languages and Tools */}
-      <div style={{ marginTop: '1rem' }}>
+      <Grid item>
         <Typography
           fontSize={'large'}
           fontWeight='bold'
-          sx={{ textAlign: 'center' }}
+          sx={{ textAlign: 'center', marginBottom: '1rem' }}
         >
           Languages and Tools
         </Typography>
@@ -173,7 +174,7 @@ export default function Skills() {
             </SkillItem>
           ))}
         </Grid>
-      </div>
+      </Grid>
     </Grid>
   )
 }
