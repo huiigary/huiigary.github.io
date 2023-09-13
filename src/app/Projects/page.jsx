@@ -2,7 +2,6 @@
 import {
   Card,
   Grid,
-  Box,
   CardMedia,
   Typography,
   CardContent,
@@ -18,19 +17,34 @@ import { colors } from '../../../colors'
 const projects = [
   {
     name: 'Simple Weather App',
-    imageURL: '',
+    imageURL: './weatherapp.png',
     description:
       'Used React to display the current weather and future weathers in a given city. Used OpenWeather API to get weather data',
-    listOfTech: ['React', 'NextJS', 'OpenWeather API', 'MUI'],
+    listOfTech: ['React', 'Next.js', 'OpenWeather API', 'MUI'],
     url: 'https://github.com/huiigary/weatherApp',
   },
   {
-    name: 'DNS-Client',
-    imageURL: '',
+    name: 'Daily Todo List',
+    imageURL: './todolist.png',
     description:
-      'Simple recursive DNS-Client used to query messages from a given domain address. Project developed for a 300-level UBC course',
-    listOfTech: ['Java', 'DNS'],
-    url: 'https://github.com/huiigary/DNS-Client',
+      'A simple way to create a todo list to be completed. Includes CRUD functionality for creating, deleting, and editing tasks.',
+    listOfTech: ['PostgreSQL', 'Express.js', 'React', 'Node.js'],
+    url: 'https://github.com/huiigary/ToDoList',
+  },
+  {
+    name: 'Simple Blog',
+    imageURL: './simpleblog.png',
+    description:
+      'A blog to create posts of images and paragraphs for exceptional memories to remember',
+    listOfTech: [
+      'React',
+      'Next.js',
+      'MUI',
+      'Prisma ORM',
+      'Railway.App',
+      'Typescript',
+    ],
+    url: 'https://github.com/huiigary/simpleblog_nextjs',
   },
 ]
 
@@ -39,10 +53,6 @@ const IMAGE_DEFAULT_URL = './defaultImage.png'
 const TITLE_DEFAULT_TEXT = 'Project title COMING SOON'
 
 export default function Projects() {
-  const card_height = 400
-  const card_width = 400
-  const card_image_height = 150
-
   return (
     <div>
       <Grid
@@ -52,6 +62,7 @@ export default function Projects() {
         alignItems={'center'}
         justifyContent={'center'}
         padding={{ xs: 5, md: 10 }}
+        // backgroundColor={'red'}
       >
         <Typography
           variant='h3'
@@ -62,109 +73,93 @@ export default function Projects() {
           Projects
         </Typography>
 
-        <Box
+        {/* Display projects as cards */}
+        <Grid
+          item
           sx={{
-            // gridTemplateColumns: 'repeat(3, auto)',
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'center',
             alignitems: 'center',
             gap: 5,
-            border: '2px solid black',
-            marginTop: 2,
+            backgroundColor: colors.background,
           }}
         >
           {/*display list of projects  */}
           {projects.map((project) => (
-            <div key={project.id}>
-              <Card
-                onClick={() => {
-                  console.log('clicked card')
-                  window.open(project.url, '_blank')
+            <Card
+              key={project.id}
+              onClick={() => {
+                console.log('clicked card')
+                window.open(project.url, '_blank')
+              }}
+              sx={{
+                backgroundColor: colors.background,
+                border: '2px solid black',
+                boxShadow: '2px 3px 6px black',
+                borderRadius: '25px',
+                align: 'center',
+                // padding: 10,
+              }}
+            >
+              {/* title  */}
+              <CardHeader
+                title={project.name || TITLE_DEFAULT_TEXT}
+                action={<IconButton aria-label='settings'></IconButton>}
+                sx={{ textAlign: 'center', fontWeight: 'bold' }}
+              ></CardHeader>
+
+              {/* image of project */}
+              <CardMedia
+                component={'img'}
+                image={project.imageURL ? project.imageURL : IMAGE_DEFAULT_URL}
+                title={project.name}
+                sx={{
+                  width: '100%',
+                  maxHeight: '50vh', // Update this value or imgs for consistent sizing
+                  display: 'block',
+                  objectFit: 'cover',
                 }}
-                // sx={{
-                //   maxWidth: 500,
-                //   width: card_width,
-                //   height: card_height,
-                //   backgroundColor: 'light grey',
-                // }}
-              >
-                {/* title  */}
+              />
+
+              {/*  description */}
+              <CardContent>
+                <h3 style={{ fontSize: 'large' }}>
+                  {project.description || DESCRIPTION_DEFAULT_TEXT}
+                </h3>
+
+                {/* list of tech*/}
+                {/*  NOTE: Use of flex causes the overflow issue  */}
                 <div
                   style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
+                    marginTop: 10,
                   }}
                 >
-                  <CardHeader
-                    title={project.name || TITLE_DEFAULT_TEXT}
-                    action={<IconButton aria-label='settings'></IconButton>}
-                    sx={{ textAlign: 'center', fontWeight: 'bold' }}
-                  ></CardHeader>
+                  <p>Tech used: </p>
+                  {project.listOfTech.map((tech, index) => (
+                    <li key={index}>{tech}</li>
+                  ))}
                 </div>
+              </CardContent>
 
-                {/* image of project */}
-                <CardMedia
-                  component={'img'}
-                  image={
-                    project.imageURL ? project.imageURL : IMAGE_DEFAULT_URL
-                  }
-                  title={project.name}
-                  sx={{
-                    height: card_image_height,
-                    width: card_width,
-                  }}
-                ></CardMedia>
-
-                {/*  description */}
-                <CardContent>
-                  <Typography variant=''>
-                    {project.description || DESCRIPTION_DEFAULT_TEXT}
-                  </Typography>
-
-                  {/* list of tech */}
-                  <div
-                    style={{
-                      // marginTop: 10,
-                      display: 'flex',
-                      flexDirection: 'row',
-                      justifyContent: 'flex-start',
-                    }}
+              {project.url ? (
+                <CardActions>
+                  <Button
+                    variant='contained'
+                    size='large'
+                    url={project.url}
+                    target={'_blank'}
+                    fullWidth={true}
+                    className='btn' // Note: class 'btn' is able to access the "social.css" file without it imported here somehow
+                    sx={{ borderRadius: '15px', paddingY: 1, marginBottom: 2 }}
                   >
-                    {project.listOfTech.map((tech, index) => (
-                      <Typography
-                        variant='body2'
-                        key={index}
-                        // sx={{ marginX: 1 }}
-                      >
-                        #{tech}
-                      </Typography>
-                    ))}
-                  </div>
-                </CardContent>
-
-                {project.url ? (
-                  <CardActions>
-                    <Button
-                      variant='outlined'
-                      url={project.url}
-                      target={'_blank'}
-                      sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        width: '100%',
-                      }}
-                    >
-                      View Project
-                    </Button>
-                  </CardActions>
-                ) : null}
-              </Card>
-            </div>
+                    View Project
+                  </Button>
+                </CardActions>
+              ) : null}
+            </Card>
           ))}
-        </Box>
+        </Grid>
       </Grid>
     </div>
   )
